@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+    {% block button %}
+              <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left:5px">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'app1:home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'app1:details' %}">Employee details</a>
+        </li>
+
+      </ul>
+        </div>
+      {% endblock %}
+{% block content %}
+<div class="container d-flex justify-content-center w-75 border border-1 shadow p-3 mt-4">
+<form method="post" enctype="multipart/form-data" class="w-50">
+    {% csrf_token %}
+    <h3>EMPLOYEE DETAILS</h3>
+    {{form|crispy}}
+    <input type="submit" class="btn btn-primary">
+</form>
+</div>
+{% endblock %}

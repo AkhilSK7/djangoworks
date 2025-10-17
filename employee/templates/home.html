@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h1 class="text-center mb-5 ">EMPLOYEE MANAGEMENT SYSTEM</h1>
+<div class="container d-flex justify-content-center  w-75 border border-1 shadow p-3 " >
+<a href="{% url 'app1:add' %}" class="btn btn-primary m-5">Add employees</a>
+<a href="{% url 'app1:details' %}" class="btn btn-primary m-5">Employee details</a>
+</div>
+{% endblock %}

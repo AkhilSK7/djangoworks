@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+    {% block button %}
+              <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'app1:home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'app1:add' %}">ADD EMPLOYEES</a>
+        </li>
+
+      </ul>
+    </div>
+      {% endblock %}
+{% block content %}
+<div class="container d-flex justify-content-center w-75 border border-1 shadow p-3 mt-4">
+<table class="table table-bordered">
+    <tr>
+        <th>Emp_id</th>
+        <th>Photo</th>
+        <th>Name</th>
+        <th>email</th>
+        <th>Phone</th>
+        <th>Designation</th>
+        <th>Salary</th>
+    </tr>
+{% for i in form %}
+    <tr>
+        <td>{{i.id}}</td>
+        <td><img src="{{i.image.url}}" style="height:100px; width:100px"></td>
+        <td>{{i.name}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.phone}}</td>
+        <td>{{i.designation}}</td>
+        <td>{{i.salary}}</td>
+    </tr>
+{% endfor %}
+</table>
+</div>
+{% endblock %}

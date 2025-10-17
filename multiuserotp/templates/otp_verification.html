@@ -1,0 +1,27 @@
+{% extends 'base.html'%}
+{% load crispy_forms_tags %}
+{% block content %}
+
+    <h2>VERIFY OTP</h2>
+  <form method="POST">
+    {% csrf_token %}
+      <div class="mb-3">
+<label class="form-label">Enter otp</label>
+      <input type="text" name="otp">
+          </div>
+      <div class="mb-3">
+        <input type="submit" class="btn btn-primary">
+      </div>
+    </form>
+
+ {% if messages%}
+    <ul type="none">
+    {% for i in messages %}
+    <li class="text-danger">{{i}}</li>
+        {% endfor %}
+
+    </ul>
+    {% endif %}
+
+
+{% endblock %}

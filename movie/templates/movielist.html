@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block button %}
+ <a class="btn btn-secondary  me-5 "  href="{% url 'app1:addmovie' %}">ADD</a>
+{% endblock %}
+{% block content %}
+<div class="row mt-3 p-5 d-flex justify-content-around" >
+<h1 class="text-center" style="font-family:'BBH Sans Bogle';font-size:4rem">MOVIE LIST</h1>
+    {% for i in movies %}
+    <div class="col-3 ">
+    <div class="card d-flex shadow" style="width: 18rem;  ">
+
+  <img src="{{i.image.url}}" class="card-img-top" alt="..." style="height:350px; width:100%">
+
+  <div class="card-body">
+    <h5 class="card-title">Title:{{i.title}}</h5>
+      <h5 class="card-title">Year:{{i.year}}</h5>
+      <form method="post" >
+          {% csrf_token %}
+    <a href="{% url 'app1:details' i.id %}" class="btn btn-primary">Description</a>
+          </form>
+  </div>
+</div>
+    </div>
+    {% endfor %}
+    </div>
+{% endblock %}

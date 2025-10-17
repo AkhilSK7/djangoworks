@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block button %}
+ <a class="btn btn-secondary  me-5 "  href="{% url 'app1:addmovie' %}">ADD</a>
+{% endblock %}
+{% block content %}
+
+<div class="d-flex justify-content-center align-items-center">
+
+<div class="row border border-2 mt-5 w-75">
+
+    <div class="col-2">
+<img  src="{{movie.image.url}}" style="height:100%; width:100%">
+    </div>
+
+    <div class="col-6">
+        <h3>Title:{{movie.title}}</h3>
+        <h3>Description:{{movie.description}}</h3>
+        <h3>Year:{{movie.year}}</h3>
+        <h3>Director:{{movie.director}}</h3>
+        <h3>Language:{{movie.language}}</h3>
+        <a href="{% url 'app1:update' movie.id %}" class="btn btn-primary">UPDATE</a>
+        <a href="{% url 'app1:delete' movie.id %}" class="btn btn-primary">DELETE</a>
+    </div>
+</div>
+    </div>
+{% endblock %}
