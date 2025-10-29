@@ -1,0 +1,28 @@
+# created by virtualenv automatically
+
+# ===== PYTHON =====
+__pycache__/
+*.py[cod]
+*.pyo
+
+# ===== DATABASE FILES =====
+*.sqlite3
+
+# ===== ENVIRONMENTS =====
+venv/
+.venv/
+.env
+*.env
+
+# ===== DJANGO STATIC/MEDIA =====
+staticfiles/
+media/
+
+# ===== IDE / EDITOR FILES =====
+.vscode/
+.idea/
+*.swp
+
+# ===== OS FILES =====
+.DS_Store
+Thumbs.db
