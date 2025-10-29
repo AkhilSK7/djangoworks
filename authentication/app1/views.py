@@ -14,7 +14,7 @@ class Register(View):
         form_instance=Signupform(request.POST)
         if form_instance.is_valid():
             form_instance.save()
-            return redirect('app1:login')
+            return redirect('app1:userlogin')
         else:
             print("Error")
             return render(request,'register.html',{'form':form_instance})
@@ -46,4 +46,4 @@ class Login(View):
 class Logout(View):
     def get(self,request):
         logout(request)
-        return redirect('app1:login')
+        return redirect('app1:userlogin')

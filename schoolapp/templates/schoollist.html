@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h1>Schoollist</h1>
+<ol class="list-group list-group-numbered">
+  {% for i in school %}
+  <li class="list-group-item"><a href="{% url 'app1:schooldetails' i.id %}">{{i.name}}</a> </li>
+  {% endfor %}
+</ol>
+
+{% endblock %}
